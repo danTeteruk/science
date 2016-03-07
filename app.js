@@ -10,11 +10,17 @@ var bodyParser = require('body-parser');
 var connect        = require('connect');
 var methodOverride = require('method-override');
 
+var uristring =
+    process.env.MONGOLAB_URI ||
+    process.env.MONGOHQ_URL ||
+    'mongodb://localhost/HelloMongoose';
 
 
 
 
-mongoose.connect('mongodb://localhost:27017/science');
+
+mongoose.connect(process.env.MONGOLAB_URI ||
+    process.env.MONGOHQ_URL);
 
 var app = express();
 
