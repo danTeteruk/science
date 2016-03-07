@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>edit</title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+  <body>
+    <form method="post", action="/<%=article.id %>/edit?_method=PUT">
+      <p> Назва
+        <input type="text", name="name" size="100" value="<%=article.name %>">
+      <p> Текст
+        <input type="textarea", name="text", size="100", value="<%= article.text %>" >
+      <p> Розділ
+        <select name="category", value="<%=article.category %>">
+          <option>cosmos</option>
+          <option>medicine</option>
+          <option>science</option>
+      </select>
+
+    <p> image Url
+        <input type="textarea", name="image", value="<%=article.image %>", size="100"><br>
+      <button type="submit">Зберегти</button>
+    </form>   
+
+
+
+  
+  <form method="POST" action="/<%=article.id %>/delete?_method=DELETE" enctype="application/x-www-form-urlencoded">
+  <button type="submit">Delete</button>
+</form>
+  </body>
+</html>
+

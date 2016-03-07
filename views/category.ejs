@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Science news</title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+    <link rel='stylesheet' href='/stylesheets/bootstrap.min.css' />
+  </head>
+  <body>
+     <%- partial('partials/navbar') %> 
+     <% article.forEach(function(articl) { %>
+    
+     <div class="col-md-12" id="news-holder">
+          <div class="col-md-4">
+               <img src="<%= articl.image %>" alt="<%= articl.name %>">
+          </div>
+
+          <div class="col-md-8">
+               <h2><%= articl.name %></h2>
+               <p class="previewText"><%= makePreview(articl.text) %><br><a href="/<%=articl.id%>">Читати далі</a></p>
+          </div>
+     </div>
+       <% })%>
+  </body>

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+    <link rel='stylesheet' href='/stylesheets/bootstrap.min.css' />
+    <title><%= article.name %></title>
+  </head>
+  <body>
+    <%- partial('partials/navbar') %>
+    <div class="col-md-12" id="singleArticle">
+      <div class="col-md-5">
+    	  <img src="<%= article.image %>" alt="<%= article.name %>" heigth="400", width="400">
+      </div>
+
+      <div class="col-md-7">
+        <h2><%= article.name %></h2>
+        <p id="date"><%= transformDate(article.date) %></p>
+        <p><%= article.text %></p>
+      </div>
+
+     </div>
+  </body>
+</html>
