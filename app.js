@@ -12,6 +12,14 @@ var methodOverride = require('method-override');
 
 
 
+
+
+
+
+mongoose.connect(process.env.MONGOLAB_URI || 'mongodb://localhost:27017/science');
+
+var app = express();
+
 app.set('port', (process.env.PORT || 5000));
 
 //For avoidong Heroku $PORT error
@@ -21,12 +29,6 @@ app.get('/', function(request, response) {
 }).listen(app.get('port'), function() {
     console.log('App is running, server is listening on port ', app.get('port'));
 });
-
-
-
-mongoose.connect(process.env.MONGOLAB_URI || 'mongodb://localhost:27017/science');
-
-var app = express();
 
 app.use(methodOverride('_method'));
 
