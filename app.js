@@ -4,7 +4,7 @@ var favicon = require('serve-favicon');
 var logger = require('morgan');
 var bodyParser = require('body-parser');
 var routes = require('./routes/index');
-//var users = require('./routes/users');
+var Article = require('../models/article');
 var mongoose = require('mongoose');
 var bodyParser = require('body-parser');
 var connect        = require('connect');
@@ -23,12 +23,18 @@ var app = express();
 app.set('port', (process.env.PORT || 5000));
 
 //For avoidong Heroku $PORT error
-app.get('/', function(request, response) {
-    var result = 'App is running'
-    response.render("index", {
+/*app.get('/', function(request, response) {
+    Article.find(function(err, article) {
+    if (err)
+      res.send(err);
+
+    res.render("index", {
       title: "Головна",
       "article": article
     })
+
+  });
+    })*/
 }).listen(app.get('port'), function() {
     console.log('App is running, server is listening on port ', app.get('port'));
 });
