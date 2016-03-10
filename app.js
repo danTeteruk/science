@@ -16,7 +16,7 @@ var methodOverride = require('method-override');
 
 
 
-mongoose.connect('mongodb://localhost:27017/science');
+mongoose.connect(process.env.MONGOLAB_URI || 'mongodb://localhost:27017/science');
 
 var app = express();
 
