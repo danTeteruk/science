@@ -23,7 +23,7 @@ var app = express();
 app.set('port', (process.env.PORT || 5000));
 
 //For avoidong Heroku $PORT error
-app.get('/', function(request, response) {
+app.get('/', function(req, res) {
   Article.find(function(err, article) {
     if (err)
       res.send(err);
