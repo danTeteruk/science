@@ -141,6 +141,14 @@ router.delete("/:article_id/delete", function(req, res) {
   });
 });
 
+router.get("/favicon.ico", function(req, res) { 
+  res.writeHead(200, {'Content-Type': 'image/x-icon'} );
+    res.end();
+    console.log('favicon requested');
+    return;
+
+})
+
 module.exports = router;
 
 
